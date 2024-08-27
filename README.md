@@ -23,7 +23,7 @@ Projenin çalıştırılması için aşağıdaki adımları izleyin:
     ```
 2. Proje dizinine gidin.
     ```bash
-    cd gourmet-bite
+    cd gourmet-bite-app
     ```
 3. Gerekli paketleri yükleyin.
     ```bash
@@ -38,6 +38,9 @@ Projenin çalıştırılması için aşağıdaki adımları izleyin:
 
 - **React** - Kullanıcı arayüzünü oluşturmak için.
 - **Bootstrap** - Duyarlı ve modern bir tasarım sağlamak için.
+- **React Router** - Uygulama içi sayfa yönlendirmeleri için.
+- **Font Awesome** - İkonlar için.
+- **jQuery** - Dinamik davranışlar için.
 - **Google Maps API** - Restoran konumunu görüntülemek için.
 
 ## Katkıda Bulunma
@@ -84,6 +87,9 @@ Follow these steps to run the project locally:
 
 - **React** - For building the user interface.
 - **Bootstrap** - For providing a responsive and modern design.
+- **React Router** - For handling in-app navigation.
+- **Font Awesome** - For icons.
+- **jQuery** - For dynamic behaviors.
 - **Google Maps API** - For displaying the restaurant's location.
 
 ## Contributing
