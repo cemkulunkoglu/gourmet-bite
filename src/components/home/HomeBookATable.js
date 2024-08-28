@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import { formatPhoneNumber } from "../../hooks/inputMask";
 
 function HomeBookATable() {
+  const [phoneNumber, setPhoneNumber] = useState("");
+
+  const handlePhoneNumberChange = (e) => {
+    const formattedPhoneNumber = formatPhoneNumber(e.target.value);
+    setPhoneNumber(formattedPhoneNumber);
+  };
+
   return (
     <div>
       <section className="book_section layout_padding">
@@ -24,6 +32,8 @@ function HomeBookATable() {
                       type="text"
                       className="form-control"
                       placeholder="Telefon Numarası"
+                      value={phoneNumber}
+                      onChange={handlePhoneNumberChange}
                     />
                   </div>
                   <div>
