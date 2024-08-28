@@ -1,8 +1,13 @@
 import React from "react";
+import { Link, useLocation } from "react-router-dom";
 import heroBg from "../assets/images/hero-bg.jpg";
 import HomeSlider from "./home/HomeSlider";
+import useActiveLink from "../hooks/useActiveLink";
 
 function Navbar() {
+  const location = useLocation();
+  useActiveLink();
+
   return (
     <div>
       <div className="hero_area">
@@ -12,9 +17,9 @@ function Navbar() {
         <header className="header_section">
           <div className="container">
             <nav className="navbar navbar-expand-lg custom_nav-container ">
-              <a className="navbar-brand" href="index.html">
+              <Link className="navbar-brand" to="/">
                 <span>Gourmet Bite</span>
-              </a>
+              </Link>
               <button
                 className="navbar-toggler"
                 type="button"
@@ -31,30 +36,30 @@ function Navbar() {
                 className="collapse navbar-collapse"
                 id="navbarSupportedContent"
               >
-                <ul className="navbar-nav  mx-auto ">
-                  <li className="nav-item active">
-                    <a className="nav-link" href="index.html">
+                <ul className="navbar-nav mx-auto">
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/">
                       ANA SAYFA <span className="sr-only">(current)</span>
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="menu.html">
+                    <Link className="nav-link" to="/menu">
                       MENÜ
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="about.html">
+                    <Link className="nav-link" to="/about-us">
                       HAKKIMIZDA
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="book.html">
+                    <Link className="nav-link" to="/book-a-table">
                       İLETİŞİM
-                    </a>
+                    </Link>
                   </li>
                 </ul>
                 <div className="user_option">
-                  <a href="" className="user_link">
+                  <a href="#" className="user_link">
                     <i className="fa fa-user" aria-hidden="true"></i>
                   </a>
                   <a className="cart_link" href="#">
@@ -111,7 +116,7 @@ function Navbar() {
             </nav>
           </div>
         </header>
-        <HomeSlider />
+        {location.pathname === "/" && <HomeSlider />}
       </div>
     </div>
   );

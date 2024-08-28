@@ -1,25 +1,37 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar";
-import HomeDiscount from "./components/home/HomeDiscount";
-import HomeOurMenu from "./components/home/HomeOurMenu";
-import HomeAboutUs from "./components/home/HomeAboutUs";
-import HomeBookATable from "./components/home/HomeBookATable";
-import HomeComments from "./components/home/HomeComments";
 import Footer from "./components/Footer";
+import Menu from "./components/Menu";
+import Index from "./components/home/Index";
+import useBodyClass from "./hooks/useBodyClass";
+import AboutUs from "./components/AboutUs";
+import BookATable from "./components/BookATable";
 
 function App() {
+  useBodyClass("default_class", "sub_page");
+
   return (
     <div className="App">
       <Navbar />
-      <HomeDiscount />
-      <HomeOurMenu />
-      <HomeAboutUs />
-      <HomeBookATable />
-      <HomeComments />
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/menu" element={<Menu />} />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/book-a-table" element={<BookATable />} />
+      </Routes>
       <Footer />
     </div>
   );
 }
 
-export default App;
+function AppWrapper() {
+  return (
+    <Router>
+      <App />
+    </Router>
+  );
+}
+
+export default AppWrapper;

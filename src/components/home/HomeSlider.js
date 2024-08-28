@@ -3,7 +3,6 @@ import React from "react";
 function HomeSlider() {
   return (
     <div>
-      {" "}
       <section className="slider_section">
         <div
           id="customCarousel1"
